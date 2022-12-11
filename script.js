@@ -5,38 +5,35 @@
  const eraserButton = document.querySelector(".eraser");
  const clearButton = document.querySelector(".clear");
 
-//  let color = "black";
+let color = "black";
 
  sizeSelectorButton.addEventListener("click",() => {
     let size = getUserInputSize();
     createDivs(size);
  });
 
-//  blackButton.addEventListener("click", () => {
-    
-//  });
+  blackButton.addEventListener("click", () => {
+    let cell = querySelector(".cell");
+    cell.addEventListener("mouseover", function() {
+    cell.style.backgroundColor = "black";
+    });
+  });
 
+//Create divs and adds and event listener mouseover to each of them
  function createDivs(size) {
-
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-
     for (let i = 0; i < (size * size); i++) {
         let cell = document.createElement("div");
         container.appendChild(cell).className = "cell";
-
-        cell.addEventListener("mouseover",
-         e => e.target.classList.add("black-color")
-        );
-    }
- } 
- createDivs(16);
+        cell.addEventListener("mouseover", colorDivs);
+    };
+ };
  
+//Ask the user for the desired size for the board
  function getUserInputSize() {
-
     let userInput = prompt("Enter a size value between 1 and 100.");
     let message = document.querySelector(".message");
-
     if ( userInput > 0 && userInput <= 100) {
         message.textContent = "Size board changed."
         return userInput;
@@ -44,16 +41,31 @@
         message.textContent = "Please, enter a value between 1 and 100.";
     } else {
         message.textContent = "Please, enter a number."
-    }
- }
+    };
+ };
 
-//  function colorDiv() {
-//     if(color == "rainbow") {
-//         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-//     } else {
-//         this.style.backgroundColor = "black";
-//     }
-//  }
+//Get user color's choice
+function getColorChoice(colorChoice) {
+    color = colorChoice;
+  };
 
+//Colors divs according to user's choice
+  function colorDivs() {
+     if (color == "rainbow") {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+     } else if (color == "white") {
+        this.style.backgroundColor = "white";
+     } else {
+        this.style.backgroundColor = "black";
+     };
+  };
+
+//Clear the board
+function clearAllDivs(){
+    let cell = document.querySelectorAll(".cell");
+    cell.forEach((div)=> div.style.backgroundColor = "white");
+}
+
+createDivs(16);
 
  
