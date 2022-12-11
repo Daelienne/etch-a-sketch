@@ -4,6 +4,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -38,7 +39,6 @@ button:active {
     box-shadow: 0 2px #666;
     transform: translateY(4px);
 }
-
 
 .select-size {
     background-color: blue;
@@ -77,10 +77,6 @@ button:active {
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: white;
-}
-
-.cell {
-    border: 1px solid black;
 }
 
 .buttons-container {

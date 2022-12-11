@@ -9,6 +9,7 @@ let color = "black";
 
  sizeSelectorButton.addEventListener("click",() => {
     let size = getUserInputSize();
+    clearAllDivs();
     createDivs(size);
  });
 
