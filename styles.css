@@ -14,9 +14,14 @@ body {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 68px;
     text-align: center;
     margin-top: 30px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 button {
@@ -50,25 +55,34 @@ button {
 
 .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    gap: 16px;
     margin-top: 150px;
 }
 
 .container {
     display: grid;
-    width: 500px;
-    height: 500px;
+    width: 580px;
+    height: 580px;
     border: 4px solid black;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: white;
 }
 
+.cell {
+    border: 1px solid black;
+}
+
 .buttons-container {
     display: flex;
     justify-content: space-between;
     gap: 8px;
+}
+
+.black-color {
+    background-color: black;
 }
 
 
