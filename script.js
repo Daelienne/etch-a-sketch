@@ -13,13 +13,6 @@ let color = "black";
     createDivs(size);
  });
 
-  blackButton.addEventListener("click", () => {
-    let cell = querySelector(".cell");
-    cell.addEventListener("mouseover", function() {
-    cell.style.backgroundColor = "black";
-    });
-  });
-
 //Create divs and adds and event listener mouseover to each of them
  function createDivs(size) {
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -52,13 +45,15 @@ function getColorChoice(colorChoice) {
 
 //Colors divs according to user's choice
   function colorDivs() {
-     if (color == "rainbow") {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-     } else if (color == "white") {
-        this.style.backgroundColor = "white";
-     } else {
-        this.style.backgroundColor = "black";
-     };
+   
+   if (color == "rainbow") {
+      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+   } else if (color == "white") {
+      this.style.backgroundColor = "white";
+   } else {
+      this.style.backgroundColor = "black";
+   };
+   
   };
 
 //Clear the board
